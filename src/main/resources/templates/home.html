@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Movies form </title>
+</head>
+<body>
+
+<div th:each="movie : ${movies}">
+    <h2 th:text="${movie.title}"> </h2>
+
+    <ol>
+        <th:block th:each="actor: ${movie.actors}">
+            <li th:inline="text"> the Actors are [[${actor.name}]]. </li>
+
+        </th:block>
+
+    </ol>
+
+</div>
+
+</body>
+</html>
